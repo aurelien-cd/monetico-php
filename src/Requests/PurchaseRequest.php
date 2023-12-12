@@ -178,6 +178,11 @@ class PurchaseRequest extends AbstractRequest
         $this->options['3dsdebrayable'] = ($value) ? '1' : '0';
     }
 
+    public function setIframeMode(): void
+    {
+        $this->options['mode_affichage'] = 'iframe';
+    }
+
     /**
      * 3DSecure V2 Choice
      *
@@ -372,6 +377,7 @@ class PurchaseRequest extends AbstractRequest
             'forcesaisiecb' => $this->options['forcesaisiecb'] ?? '',
             'libelleMonetique' => $this->options['libelleMonetique'] ?? '',
             'libelleMonetiqueLocalite' => $this->options['libelleMonetiqueLocalite'] ?? '',
+            'mode_affichage' => $this->options['mode_affichage'] ?? '',
         ];
     }
 
